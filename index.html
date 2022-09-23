@@ -1,0 +1,282 @@
+<html>
+
+<head>
+    <title>AR.js Basic Camera Example</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script
+        src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="/dist/script.js"></script>
+
+</head>
+
+<body>
+
+    <!-- <style>
+        .arjs-loader {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arjs-loader div {
+            text-align: center;
+            font-size: 5.25em;
+            color: white;
+        }
+
+    </style> -->
+
+    <a-scene vr-mode-ui="enabled: false" arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+        renderer="logarithmicDepthBuffer:true">
+
+        <a-assets>
+            <a-asset-item id="optimerBoldFont" src="CipherB_Regular.json"></a-asset-item>
+        </a-assets>
+        <a-assets>
+            <img id="mapcat" src="mapcat.png">
+        </a-assets>
+
+        <a-assets>
+            <canvas id="my-canvas" crossorigin="anonymous"></canvas>
+        </a-assets>
+
+
+        <a-entity group geometry="primitive: plane" material="src: #my-canvas" draw-canvas="my-canvas"></a-entity>
+
+        <!-- midi -->
+        <!-- <a-box color="tomato" depth="2" height="4" width="0.5" position="0 5 0"></a-box> -->
+
+        <!-- soir -->
+        <!-- <a-box color="tomato" depth="2" height="4" width="0.5" position="6 1 0"></a-box> -->
+
+        <!-- matin  0 == si plus devant ou derrière -->
+        <!-- <a-box color="tomato" depth="2" height="4" width="0.5" position="-6 1 0"></a-box> -->
+        <!-- <a-light type="point" intensity="2" position="-10 1 0"></a-light> -->
+
+        <!-- matin + couleur -->
+        <!-- <a-entity group light="type: ambient; intensity: 2; color:#6c6e66"></a-entity>
+        <a-entity group light="type: directional;
+                         castShadow: true;
+                         intensity: 0.5;
+                         shadowCameraVisible: true;"
+                         position="-10 2 0"></a-entity> -->
+                                 <!-- <a-light type="point" intensity="1" position="-10 3 0"></a-light> -->
+
+
+        <!-- midi + couleur -->
+        <!-- <a-entity group light="type: ambient; intensity: 2; color:#6c6e66"></a-entity>
+        <a-entity group light="type: directional;
+                         castShadow: true;
+                         intensity: 2;
+                         shadowCameraVisible: true;"
+                         position="0 5 0"></a-entity>
+
+                         <a-light type="point" intensity="2" position="0 6 0"></a-light> -->
+
+
+        <!-- soir + couleur -->
+        <!-- <a-entity group light="type: ambient; intensity: 1; color:#6e6b66"></a-entity>
+        <a-entity group light="type: directional;
+                         castShadow: true;
+                         intensity: 2;
+                         shadowCameraVisible: true;"
+                         position="10 1 0"></a-entity>
+                         <a-light type="point" intensity="1" position="5 4 0"></a-light> -->
+
+                         <a-entity group color></a-entity>
+                         <a-entity group intensity ></a-entity>
+                                          <a-entity group point ></a-entity>
+
+                                <!-- nuit -->
+        <!-- <a-entity group color light="type: ambient; intensity: 2; color:#080707"></a-entity>
+        <a-entity group intensity light=gps-"type: directional;
+                         castShadow: true;
+                         intensity: 0.1;
+                         shadowCameraVisible: true;"
+                         position="0 0 0"></a-entity>
+                         <a-entity group point  light="type: point; intensity: 0; color:#080707;" position="0 0 0"></a-entity> -->
+
+
+
+<!--
+        <a-light id="real-light" type="directional" light="castShadow:true;"
+            position="0 1 0" intensity="10"></a-light> -->
+
+        <!-- l !-->
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: L; font: #optimerBoldFont;" position="-1 0.25 -0.5"
+            class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: m; font: #optimerBoldFont;" position="-1 0.25 -0.5"></a-entity>
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+         text-geometry="value: l; font: #optimerBoldFont;" position="-1 0.25 -0.5">
+        </a-entity>
+        <!--e !-->
+
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: e; font: #optimerBoldFont;" position="-0.9 0.75 -1"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: E; font: #optimerBoldFont;" position="-0.9 0.75 -1" class="clickable" gesture-handler
+            gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: é; font: #optimerBoldFont;" position="-0.9 0.75 -1"></a-entity>
+
+        <!-- g !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: G; font: #optimerBoldFont;" position="-0.9 0.25 -3"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: g; font: #optimerBoldFont;" position="-0.9 0.25 -3" class="clickable" gesture-handler
+            gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 7;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: h; font: #optimerBoldFont;" position="-0.9 0.25 -3"></a-entity>
+        <!-- o !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: O; font: #optimerBoldFont;" position="-0.2 0.15 -3"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: o; font: #optimerBoldFont;" position="-0.2 0.15 -3" class="clickable" gesture-handler
+            gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 7;">
+        </a-entity>
+        <!-- u !-->
+        <a-entity group rotation="0 45 0" contreform id="objects" scale='1.5 1.5 1.5'
+         text-geometry="value: U; font: #optimerBoldFont;"
+            position="0.1 0.7 -3"></a-entity>
+        <a-entity group rotation="0 45 0" form id="objects" scale='1.5 1.5 1.5'
+         text-geometry="value: u; font: #optimerBoldFont;"
+            position="0.1 0.7 -3" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 7;">
+        </a-entity>
+
+        <!-- t !-->
+        <a-entity group rotation="0 45 0" contreform id="objects" scale='1.5 1.5 1.5'
+         text-geometry="value: T; font: #optimerBoldFont;"
+            position="0.7 0.3 -3"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: t; font: #optimerBoldFont;" position="0.7 0.3 -3" class="clickable" gesture-handler
+            gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 7;">
+        </a-entity>
+        <a-entity group rotation="0 45 0" forma id="objects" scale='1.5 1.5 1.5'
+         text-geometry="value: w; font: #optimerBoldFont;"
+            position="0.7 0.3 -3"></a-entity>
+
+        <!-- d !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: d; font: #optimerBoldFont;" rotation="0 -80 0" position="1 1 -2.6"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: D; font: #optimerBoldFont;" rotation="0 -80 0" position="1 1 -2.6" class="clickable"
+            gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: k; font: #optimerBoldFont;" rotation="0 -80 0" position="1 1 -2.6">
+        </a-entity>
+
+        <!-- s !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: e; font: #optimerBoldFont;" rotation="0 -80 0" position="1.3 1.3 -2.4"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: E; font: #optimerBoldFont;" rotation="0 -80 0" position="1.3 1.3 -2.4"
+            class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: é; font: #optimerBoldFont;" rotation="0 -80 0" position="1.3 1.3 -2.4">
+        </a-entity>
+        <!-- s !-->
+
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: S; font: #optimerBoldFont;" rotation="0 -80 0" position="1 1.4 -1.4"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: s; font: #optimerBoldFont;" rotation="0 -80 0" position="1 1.4 -1.4" class="clickable"
+            gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: z; font: #optimerBoldFont;" rotation="0 -80 0" position="1 1.4 -1.4"></a-entity>
+
+        <!-- s !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: S; font: #optimerBoldFont;" rotation="0 -80 0" position="1 0.3 -1"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: s; font: #optimerBoldFont;" rotation="0 -80 0" position="1 0.3 -1" class="clickable"
+            gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: z; font: #optimerBoldFont;" rotation="0 -80 0" position="1 0.3 -1"></a-entity>
+        <!-- i !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: I; font: #optimerBoldFont;" rotation="0 -80 0" position="1.4 -0.15 -0.6"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: i; font: #optimerBoldFont;" rotation="0 -80 0" position="1.4 -0.15 -0.6"
+            class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4; ">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: j; font: #optimerBoldFont;" rotation="0 -80 0" position="1.4 -0.15 -0.6">
+        </a-entity>
+        <!-- g !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: G; font: #optimerBoldFont;" rotation="0 -80 0" position="1.5 0.3 0"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: g; font: #optimerBoldFont;" rotation="0 -80 0" position="1.5 0.3 0" class="clickable"
+            gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 5000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: h; font: #optimerBoldFont;" rotation="0 -80 0" position="1.5 0.3 0">
+        </a-entity>
+
+        <!-- n !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: N; font: #optimerBoldFont;" rotation="0 -180 0" position="1.1 0 0.6"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: n; font: #optimerBoldFont;" rotation="0 -180 0" position="1.1 0 0.6" class="clickable"
+            gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <!-- e !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: e; font: #optimerBoldFont;" rotation="0 -180 0" position="0.5 0.3 0.9'"></a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: E; font: #optimerBoldFont;" rotation="0 -180 0" position="0.5 0.3 0.9"
+            class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 7000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: é; font: #optimerBoldFont;" rotation="0 -180 0" position="0.5 0.3 0.9"></a-entity>
+        </a-entity>
+        <!-- s !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: S; font: #optimerBoldFont;" rotation="0 -180 0" position="-0.2 0.3 0.5"></a-entity>
+        <a-entity group form  id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: s; font: #optimerBoldFont;" rotation="0 -180 0" position="-0.2 0.3 0.5"
+            class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 1.5 4;">
+        </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: z; font: #optimerBoldFont;" rotation="0 -180 0" position="-0.2 0.3 0.5"></a-entity>
+            <a-camera position="0 0.4 0">
+            </a-camera>
+        </a-scene>
+
+    </body>
+</html>
