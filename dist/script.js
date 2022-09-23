@@ -369,14 +369,10 @@ var sunriseStr = times.sunrise.getHours() + ':' + times.sunrise.getMinutes(); //
 
 var sunrisePos = SunCalc.getPosition(times.sunrise, 48.8, 2.4); // get sunrise azimuth in degrees
 
-var sunriseAzimuth = sunrisePos.azimuth * 180 / Math.PI;
+var sunriseAzimuth = sunrisePos.azimuth * 150 / Math.PI;
 console.log(times); // get position of the sun (azimuth and altitude) at today's sunrise
+// get sunrise azimuth in degrees
 
-console.log(sunrisePos); // get position of the sun (azimuth and altitude) at today's sunrise
-
-console.log(sunriseAzimuth); // get sunrise azimuth in degrees
-
-var scale = 1.5;
 var today = new Date();
 var hours = today.getHours();
 var lighting = {};
@@ -387,89 +383,77 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
     y: 2,
     z: 0,
     intensity: 1,
-    color: '#6c6e66'
+    shininess: 20,
+    reflectivity: 0.2,
+    color: '#6E7579',
+    blackReflectivity: 0.5
   };
   console.log('mornig');
 } else if (hours >= times.solarNoon.getHours() && hours < times.goldenHour.getHours()) {
   lighting = {
-    x: 0,
-    y: 5,
+    x: -5,
+    y: 3,
     z: 0,
-    intensity: 2,
-    color: '#6c6e66'
+    intensity: 1.5,
+    shininess: 15,
+    reflectivity: 0.15,
+    blackReflectivity: 0.5,
+    color: '#7B7B79'
   };
   console.log('good afternoon');
-} else if (hours >= times.goldenHour.getHours() && hours < times.night.getHours()) {
+} else if (hours >= times.goldenHour.getHours() && hours < times.sunset.getHours()) {
+  lighting = {
+    x: 10,
+    y: 2,
+    z: 0,
+    intensity: 1,
+    shininess: 30,
+    reflectivity: 0.1,
+    color: '#8C8D89',
+    blackReflectivity: 0.5
+  }; //finis trop tard
+
+  console.log('golden hour');
+} else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
   lighting = {
     x: 10,
     y: 1,
     z: 0,
-    intensity: 2,
-    color: '#6c6e66"'
+    intensity: 0.5,
+    shininess: 10,
+    reflectivity: 0.1,
+    color: '#424347',
+    blackReflectivity: 0.3
   }; //finis trop tard
 
-  console.log('golden hour');
+  console.log('sunset');
 } else if (hours >= times.night.getHours()) {
   lighting = {
-    x: 0,
-    y: 0,
+    x: -10,
+    y: 2,
     z: 0,
-    intensity: 0.1,
-    color: '#080707'
+    intensity: 2,
+    shininess: 20,
+    reflectivity: 0.2,
+    color: '#090A0D',
+    blackReflectivity: 0.2
   };
   console.log('good night');
 } else if (hours <= times.nightEnd.getHours() || hours == 0) {
   lighting = {
-    x: 0,
-    y: 0,
+    x: -10,
+    y: 2,
     z: 0,
-    intensity: 0.1,
-    color: '#080707'
+    intensity: 1,
+    shininess: 20,
+    reflectivity: 0.2,
+    color: '#6E7579',
+    blackReflectivity: 0.5
   };
   console.log('good night');
 }
 
-var reflectionCube = new THREE.CubeTextureLoader().load(["envmap/px.jpeg", "envmap/nx.jpeg", "envmap/py.jpeg", "envmap/ny.jpeg", "envmap/pz.jpeg", "envmap/nz.jpeg"]); // import WebXRPolyfill from 'webxr-polyfill';
-// import * as THREE from 'three';
-// import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
-// import { ARButton } from 'three/addons/webxr/ARButton.js';
-// import { XREstimatedLight } from 'three/addons/webxr/XREstimatedLight.js';
-// const polyfill = new WebXRPolyfill();
-// const lightProbe = await xrSession.requestLightProbe();
-// frame loop
-// function onXRFrame(time, xrFrame) {
-//     let lightEstimate = xrFrame.getLightEstimate(lightProbe);
-//     // Use light estimate data to light the scene
-//     // Available properties
-//     console.log(lightEstimate.sphericalHarmonicsCoefficients)
-//     lightEstimate.primaryLightDirection;
-//     lightEstimate.primaryLightIntensity;
-// }
-// console.log(polyfill)
-// console.log(navigator.xr)
-// // Using Three.js to demonstrate
-// let threeDirectionalLight = new THREE.DirectionalLight();
-// // THREE.LightProbe is Three.js' spherical harmonics-based light type.
-// let threeLightProbe = new THREE.LightProbe();
-// let lightProbe = await xrSession.requestLightProbe();
-// function onXRFrame(t, xrFrame) {
-//     let lightEstimate = xrFrame.getLightEstimate(lightProbe);
-//     let intensity = Math.max(1.0,
-//         Math.max(lightEstimate.primaryLightIntensity.x,
-//             Math.max(lightEstimate.primaryLightIntensity.y,
-//                 lightEstimate.primaryLightIntensity.z)));
-//     threeDirectionalLight.position.set(lightEstimate.primaryLightDirection.x,
-//         lightEstimate.primaryLightDirection.y,
-//         lightEstimate.primaryLightDirection.z);
-//     threeDirectionalLight.color.setRGB(lightEstimate.primaryLightIntensity.x / intensity,
-//         lightEstimate.primaryLightIntensity.y / intensity,
-//         lightEstimate.primaryLightIntensity.z / intensity);
-//     threeDirectionalLight.intensity = intensity;
-//     threeLightProbe.sh.fromArray(lightEstimate.sphericalHarmonicsCoefficients);
-//     // ... other typical frame loop stuff.
-// }
-// SunCalc.getTimes(/*Date*/ date, /*Number*/ latitude, /*Number*/ longitude, /*Number (default=0)*/ height)
-
+var reflectionCube = new THREE.CubeTextureLoader().load(["envmap/px.jpeg", "envmap/nx.jpeg", "envmap/py.jpeg", "envmap/ny.jpeg", "envmap/pz.jpeg", "envmap/nz.jpeg"]);
 AFRAME.registerComponent('contreform', {
   init: function init() {
     var _this = this;
@@ -478,24 +462,17 @@ AFRAME.registerComponent('contreform', {
     var data = scene.setAttribute('renderer'); // data.exposure = 0.5;
 
     this.loaded = false;
-    this.camera = document.querySelector('a-camera'); //if pas la même distance scale  ====
-    // window.addEventListener('gps-entity-place-adde', e => {
-    //     console.log(e.detail)
-    // })
-    // window.addEventListener('gps-camera-origin-coord-set', e => {
-    //     console.log(e.detail)
-    // })
-
-    var materials = [new THREE.MeshStandardMaterial({
-      color: 0x000000,
+    this.camera = document.querySelector('a-camera');
+    var materials = [new THREE.MeshPhongMaterial({
+      color: 0x202020,
       envMap: reflectionCube,
-      roughness: 0.5 // shininess: 60,
-
-    }), new THREE.MeshStandardMaterial({
-      color: 0x000000,
+      shininess: 50,
+      reflectivity: lighting.blackReflectivity
+    }), new THREE.MeshPhongMaterial({
+      color: 0x202020,
       envMap: reflectionCube,
-      roughness: 0.5 // shininess: 1,
-
+      shininess: 50,
+      reflectivity: lighting.blackReflectivity
     })];
     this.el.addEventListener("loaded", function (e) {
       _this.material = _this.el.getObject3D('mesh').material = materials;
@@ -506,15 +483,16 @@ AFRAME.registerComponent('form', {
   init: function init() {
     var _this2 = this;
 
-    var materials = [new THREE.MeshStandardMaterial({
+    var materials = [new THREE.MeshPhongMaterial({
       color: 0xFFFFFF,
       envMap: reflectionCube,
-      envMapIntensity: 0.7,
-      roughness: 0.85
-    }), new THREE.MeshStandardMaterial({
-      color: 0x000000,
+      shininess: lighting.shininess,
+      reflectivity: lighting.reflectivity
+    }), new THREE.MeshPhongMaterial({
+      color: 0x202020,
       envMap: reflectionCube,
-      roughness: 0.85
+      shininess: 50,
+      reflectivity: lighting.blackReflectivity
     })];
     this.el.addEventListener("loaded", function (e) {
       _this2.material = _this2.el.getObject3D('mesh').material = materials;
@@ -537,16 +515,16 @@ AFRAME.registerComponent('forma', {
     //         }
     //     }
     // })
-    var materials = [new THREE.MeshStandardMaterial({
+    var materials = [new THREE.MeshPhongMaterial({
       color: 0xFFFFFF,
       envMap: reflectionCube,
-      envMapIntensity: 0.7,
-      roughness: 0.85
-    }), new THREE.MeshStandardMaterial({
+      shininess: lighting.shininess,
+      reflectivity: lighting.reflectivity
+    }), new THREE.MeshPhongMaterial({
       color: 0xFFFFFF,
       envMap: reflectionCube,
-      envMapIntensity: 0.7,
-      roughness: 0.85 // envMap: reflectionCube
+      shininess: lighting.shininess,
+      reflectivity: lighting.reflectivity // envMap: reflectionCube
 
     })];
     this.el.addEventListener("loaded", function (e) {
