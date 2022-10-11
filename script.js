@@ -61,13 +61,13 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
 else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
     lighting = {
         x: 10,
-        y: 1,
+        y: 2,
         z: 0,
-        intensity: 0.5,
-        shininess: 10,
+        intensity: 1,
+        shininess: 30,
         reflectivity: 0.1,
-        color: '#424347',
-        blackReflectivity: 0.3
+        color: '#8C8D89',
+        blackReflectivity: 0.5
     }
     //finis trop tard
     console.log('sunset')
@@ -75,26 +75,26 @@ else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
 }
 else if (hours >= times.night.getHours()) {
     lighting = {
-        x: -10,
+        x: 10,
         y: 2,
         z: 0,
-        intensity: 2,
-        shininess: 20,
-        reflectivity: 0.2,
-        color: '#090A0D',
-        blackReflectivity: 0.2
+        intensity: 1,
+        shininess: 30,
+        reflectivity: 0.1,
+        color: '#8C8D89',
+        blackReflectivity: 0.5
     }
     console.log('good night')
 }
 else if (hours <= times.nightEnd.getHours() || hours == 0) {
     lighting = {
-        x: -10,
+        x: 10,
         y: 2,
         z: 0,
         intensity: 1,
-        shininess: 20,
-        reflectivity: 0.2,
-        color: '#6E7579',
+        shininess: 30,
+        reflectivity: 0.1,
+        color: '#8C8D89',
         blackReflectivity: 0.5
     }
     console.log('good night')
@@ -102,15 +102,15 @@ else if (hours <= times.nightEnd.getHours() || hours == 0) {
 
 
 
-const reflectionCube = new THREE.CubeTextureLoader().load(
-    [
-        "envmap/px.jpeg",
-        "envmap/nx.jpeg",
-        "envmap/py.jpeg",
-        "envmap/ny.jpeg",
-        "envmap/pz.jpeg",
-        "envmap/nz.jpeg",
-    ]);
+// const reflectionCube = new THREE.CubeTextureLoader().load(
+//     [
+//         "envmap/px.jpeg",
+//         "envmap/nx.jpeg",
+//         "envmap/py.jpeg",
+//         "envmap/ny.jpeg",
+//         "envmap/pz.jpeg",
+//         "envmap/nz.jpeg",
+//     ]);
 
 
 AFRAME.registerComponent('contreform', {
@@ -123,13 +123,13 @@ AFRAME.registerComponent('contreform', {
 
         var materials = [new THREE.MeshPhongMaterial({
             color: 0x202020,
-            envMap: reflectionCube,
+            // envMap: reflectionCube,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
 
         }), new THREE.MeshPhongMaterial({
             color: 0x202020,
-            envMap: reflectionCube,
+            // envMap: reflectionCube,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
 
@@ -145,13 +145,13 @@ AFRAME.registerComponent('form', {
     init: function () {
         var materials = [new THREE.MeshPhongMaterial({
             color: 0xFFFFFF,
-            envMap: reflectionCube,
+            // envMap: reflectionCube,
             shininess: lighting.shininess,
             reflectivity: lighting.reflectivity
 
         }), new THREE.MeshPhongMaterial({
             color: 0x202020,
-            envMap: reflectionCube,
+            // envMap: reflectionCube,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
         })]
@@ -181,14 +181,14 @@ AFRAME.registerComponent('forma', {
 
         var materials = [new THREE.MeshPhongMaterial({
             color: 0xFFFFFF,
-            envMap: reflectionCube,
+            // envMap: reflectionCube,
             shininess: lighting.shininess,
             reflectivity: lighting.reflectivity
 
 
         }), new THREE.MeshPhongMaterial({
             color: 0xFFFFFF,
-            envMap: reflectionCube,
+            // envMap: reflectionCube,
             shininess: lighting.shininess,
             reflectivity: lighting.reflectivity
 
