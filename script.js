@@ -75,27 +75,27 @@ else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
 }
 else if (hours >= times.night.getHours()) {
     lighting = {
-        x: 10,
-        y: 2,
+        x: -5,
+        y: 3,
         z: 0,
-        intensity: 1,
-        shininess: 30,
-        reflectivity: 0.1,
-        color: '#8C8D89',
-        blackReflectivity: 0.5
+        intensity: 1.5,
+        shininess: 15,
+        reflectivity: 0.15,
+        blackReflectivity: 0.5,
+        color: '#7B7B79',
     }
     console.log('good night')
 }
 else if (hours <= times.nightEnd.getHours() || hours == 0) {
     lighting = {
-        x: 10,
-        y: 2,
+        x: -5,
+        y: 3,
         z: 0,
-        intensity: 1,
-        shininess: 30,
-        reflectivity: 0.1,
-        color: '#8C8D89',
-        blackReflectivity: 0.5
+        intensity: 1.5,
+        shininess: 15,
+        reflectivity: 0.15,
+        blackReflectivity: 0.5,
+        color: '#7B7B79',
     }
     console.log('good night')
 }

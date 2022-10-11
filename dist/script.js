@@ -429,25 +429,25 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
   console.log('sunset');
 } else if (hours >= times.night.getHours()) {
   lighting = {
-    x: 10,
+    x: -10,
     y: 2,
     z: 0,
     intensity: 1,
-    shininess: 30,
-    reflectivity: 0.1,
-    color: '#8C8D89',
+    shininess: 20,
+    reflectivity: 0.2,
+    color: '#6E7579',
     blackReflectivity: 0.5
   };
   console.log('good night');
 } else if (hours <= times.nightEnd.getHours() || hours == 0) {
   lighting = {
-    x: 10,
+    x: -10,
     y: 2,
     z: 0,
     intensity: 1,
-    shininess: 30,
-    reflectivity: 0.1,
-    color: '#8C8D89',
+    shininess: 20,
+    reflectivity: 0.2,
+    color: '#6E7579',
     blackReflectivity: 0.5
   };
   console.log('good night');

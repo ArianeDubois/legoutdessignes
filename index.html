@@ -59,14 +59,16 @@
         <a-entity group intensity></a-entity>
         <a-entity group point></a-entity>
 
-        <!--
+
         <a-light id="real-light" type="directional" light="castShadow:true;"
-            position="0 1 0" intensity="10"></a-light> -->
+            position="1 2 0" intensity="1.5"
+            shininess="3"
+            reflectivity="0.1"></a-light>
 
         <!-- l !-->
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: L; font: #optimerBoldFont;"
             position="-1.5 0.25 -1" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
 
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: m; font: #optimerBoldFont;"
@@ -80,7 +82,7 @@
             position="-1.081 0.25 -1"></a-entity>
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: E; font: #optimerBoldFont;"
             position="-1.081 0.25 -1" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 4000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: é; font: #optimerBoldFont;"
             position="-1.081 0.25 -1"></a-entity>
@@ -90,7 +92,7 @@
             position="-0.9 0.25 -3"></a-entity>
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: g; font: #optimerBoldFont;"
             position="-0.9 0.25 -3" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: h; font: #optimerBoldFont;"
             position="-0.9 0.25 -3"></a-entity>
@@ -99,7 +101,7 @@
             position="-0.381 0.25 -3"></a-entity>
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: o; font: #optimerBoldFont;"
             position="-0.381 0.25 -3" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
+            animation=" property: scale;  dur: 4000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
         </a-entity>
         <!-- u !-->
         <a-entity group  contreform id="objects" scale='1.5 3.5 1.5'
@@ -107,7 +109,7 @@
         <a-entity group  form id="objects" scale='1.5 3.5 1.5'
             text-geometry="value: u; font: #optimerBoldFont;" position="0.1 0.25 -3" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
+            animation=" property: scale;  dur: 4000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
         </a-entity>
 
         <!-- t !-->
@@ -115,7 +117,7 @@
             position="0.621 0.25 -3"></a-entity>
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: t; font: #optimerBoldFont;"
             position="0.621 0.25 -3" class="clickable"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 7;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: w; font: #optimerBoldFont;"
             position="0.621 0.25 -3"></a-entity>
@@ -126,7 +128,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: D; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1 1.4 -2.5" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: k; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1 1.4 -2.5">
@@ -138,7 +140,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: E; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1 1.4 -1.981" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: é; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1 1.4 -1.981">
@@ -150,7 +152,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: s; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1 1.4 -1.4" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 4000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: z; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1 1.4 -1.4"></a-entity>
@@ -161,7 +163,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: s; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1.4 -0.15 -1" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: z; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1.4 -0.15 -1"></a-entity>
@@ -171,7 +173,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: i; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1.4 -0.15 -0.6" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4; ">
+            animation=" property: scale;  dur: 4000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4; ">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: j; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1.4 -0.15 -0.6">
@@ -194,7 +196,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: n; font: #optimerBoldFont;"
               rotation="0 -80 0" position="1.4 -0.15 0.4" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 8000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 2000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <!-- e !-->
         <a-entity group contreform id="objects" scale='1.5 3.5 1.5' text-geometry="value: e; font: #optimerBoldFont;"
@@ -202,7 +204,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: E; font: #optimerBoldFont;"
         rotation="0 -80 0"  position="1.4 -0.15 1" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 7000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
+            animation=" property: scale;  dur: 3000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;">
         </a-entity>
         <a-entity     rotation="0 -80 0" group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: é; font: #optimerBoldFont;"
              position="1.4 -0.15 1"></a-entity>
@@ -213,7 +215,7 @@
         <a-entity group form id="objects" scale='1.5 3.5 1.5' text-geometry="value: s; font: #optimerBoldFont;"
              position="1.4 -0.15 1.4" class="clickable" gesture-handler
             gesture-handler="minScale: 0.25; maxScale: 10"
-            animation=" property: scale;  dur: 6000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;" rotation="0 -80 0">
+            animation=" property: scale;  dur: 4000; dir: alternate; loop:true; easing: easeInSine;  to: 1.5 3.5 4;" rotation="0 -80 0">
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 3.5 1.5' text-geometry="value: z; font: #optimerBoldFont;"
             rotation="0 -80 0" position="1.4 -0.15 1.4"></a-entity>
