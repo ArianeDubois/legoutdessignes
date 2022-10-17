@@ -60,13 +60,13 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
 }
 else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
     lighting = {
-        x: 10,
+        x: -10,
         y: 2,
         z: 0,
         intensity: 1,
-        shininess: 30,
-        reflectivity: 0.1,
-        color: '#8C8D89',
+        shininess: 20,
+        reflectivity: 0.2,
+        color: '#6E7579',
         blackReflectivity: 0.5
     }
     //finis trop tard
@@ -75,43 +75,30 @@ else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
 }
 else if (hours >= times.night.getHours()) {
     lighting = {
-        x: -5,
-        y: 3,
+        x: -2,
+        y: 1,
         z: 0,
         intensity: 1.5,
         shininess: 15,
         reflectivity: 0.15,
         blackReflectivity: 0.5,
-        color: '#7B7B79',
+        color: '#6E7579',
     }
     console.log('good night')
 }
 else if (hours <= times.nightEnd.getHours() || hours == 0) {
     lighting = {
-        x: -5,
-        y: 3,
+        x: -2,
+        y: 1,
         z: 0,
-        intensity: 1.5,
-        shininess: 15,
+        intensity: 1,
+        shininess: 10,
         reflectivity: 0.15,
         blackReflectivity: 0.5,
-        color: '#7B7B79',
+        color: '#6E7579',
     }
     console.log('good night')
 }
-
-
-
-// const reflectionCube = new THREE.CubeTextureLoader().load(
-//     [
-//         "envmap/px.jpeg",
-//         "envmap/nx.jpeg",
-//         "envmap/py.jpeg",
-//         "envmap/ny.jpeg",
-//         "envmap/pz.jpeg",
-//         "envmap/nz.jpeg",
-//     ]);
-
 
 AFRAME.registerComponent('contreform', {
     init: function () {
@@ -123,13 +110,11 @@ AFRAME.registerComponent('contreform', {
 
         var materials = [new THREE.MeshPhongMaterial({
             color: 0x202020,
-            // envMap: reflectionCube,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
 
         }), new THREE.MeshPhongMaterial({
             color: 0x202020,
-            // envMap: reflectionCube,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
 
@@ -145,13 +130,11 @@ AFRAME.registerComponent('form', {
     init: function () {
         var materials = [new THREE.MeshPhongMaterial({
             color: 0xFFFFFF,
-            // envMap: reflectionCube,
             shininess: lighting.shininess,
             reflectivity: lighting.reflectivity
 
         }), new THREE.MeshPhongMaterial({
             color: 0x202020,
-            // envMap: reflectionCube,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
         })]
@@ -165,34 +148,16 @@ AFRAME.registerComponent('form', {
 AFRAME.registerComponent('forma', {
 
     init: function () {
-        // window.addEventListener('gps-camera-update-position', e => {
-        //     if (this.loaded === false) {
-        //         this.loaded = true;
-        //         console.log(this.el.getAttribute('gps-entity-place').latitude.toFixed(4))
-        //         console.log(e.detail.position.latitude.toFixed(4));
-        //         if (this.el.getAttribute('gps-entity-place').longitude.toFixed(4) == e.detail.position.longitude.toFixed(4)) {
-        //             console.log('hide')
-        //             scale = { x: 0.1, y: 0.1, z: 0.1 }
-        //             this.el.setAttribute('scale', scale)
-
-        //         }
-        //     }
-        // })
-
         var materials = [new THREE.MeshPhongMaterial({
             color: 0xFFFFFF,
-            // envMap: reflectionCube,
             shininess: lighting.shininess,
             reflectivity: lighting.reflectivity
 
 
         }), new THREE.MeshPhongMaterial({
             color: 0xFFFFFF,
-            // envMap: reflectionCube,
             shininess: lighting.shininess,
             reflectivity: lighting.reflectivity
-
-            // envMap: reflectionCube
         })]
 
         this.el.addEventListener("loaded", e => {
