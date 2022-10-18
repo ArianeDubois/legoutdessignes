@@ -416,24 +416,24 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
   console.log('golden hour');
 } else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
   lighting = {
-    x: -10,
-    y: 2,
+    x: -1,
+    y: 1,
     z: 0,
     intensity: 1,
-    shininess: 20,
-    reflectivity: 0.2,
-    color: '#6E7579',
-    blackReflectivity: 0.5
+    shininess: 10,
+    reflectivity: 0.15,
+    blackReflectivity: 0.5,
+    color: '#6E7579'
   }; //finis trop tard
 
   console.log('sunset');
 } else if (hours >= times.night.getHours()) {
   lighting = {
-    x: -2,
+    x: -1,
     y: 1,
     z: 0,
-    intensity: 1.5,
-    shininess: 15,
+    intensity: 1,
+    shininess: 10,
     reflectivity: 0.15,
     blackReflectivity: 0.5,
     color: '#6E7579'
@@ -441,7 +441,7 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
   console.log('good night');
 } else if (hours <= times.nightEnd.getHours() || hours == 0) {
   lighting = {
-    x: -2,
+    x: -1,
     y: 1,
     z: 0,
     intensity: 1,
@@ -485,7 +485,7 @@ AFRAME.registerComponent('form', {
       shininess: lighting.shininess,
       reflectivity: lighting.reflectivity
     }), new THREE.MeshPhongMaterial({
-      color: 0x202020,
+      color: 0xFFFFFF,
       shininess: 50,
       reflectivity: lighting.blackReflectivity
     })];
@@ -523,6 +523,12 @@ AFRAME.registerComponent('intensity', {
       };
 
       _this4.el.setAttribute('light', light);
+
+      _this4.el.setAttribute('position', {
+        x: 5,
+        y: 10,
+        z: 0
+      });
     });
   }
 });

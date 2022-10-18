@@ -60,14 +60,14 @@ if (hours >= times.nightEnd.getHours() && hours < times.solarNoon.getHours()) {
 }
 else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
     lighting = {
-        x: -10,
-        y: 2,
+        x: -1,
+        y: 1,
         z: 0,
         intensity: 1,
-        shininess: 20,
-        reflectivity: 0.2,
+        shininess: 10,
+        reflectivity: 0.15,
+        blackReflectivity: 0.5,
         color: '#6E7579',
-        blackReflectivity: 0.5
     }
     //finis trop tard
     console.log('sunset')
@@ -75,11 +75,11 @@ else if (hours >= times.sunset.getHours() && hours < times.night.getHours()) {
 }
 else if (hours >= times.night.getHours()) {
     lighting = {
-        x: -2,
+        x: -1,
         y: 1,
         z: 0,
-        intensity: 1.5,
-        shininess: 15,
+        intensity: 1,
+        shininess: 10,
         reflectivity: 0.15,
         blackReflectivity: 0.5,
         color: '#6E7579',
@@ -88,7 +88,7 @@ else if (hours >= times.night.getHours()) {
 }
 else if (hours <= times.nightEnd.getHours() || hours == 0) {
     lighting = {
-        x: -2,
+        x: -1,
         y: 1,
         z: 0,
         intensity: 1,
@@ -134,7 +134,7 @@ AFRAME.registerComponent('form', {
             reflectivity: lighting.reflectivity
 
         }), new THREE.MeshPhongMaterial({
-            color: 0x202020,
+            color: 0xFFFFFF,
             shininess: 50,
             reflectivity: lighting.blackReflectivity
         })]
@@ -175,6 +175,8 @@ AFRAME.registerComponent('intensity', {
                 intensity: lighting.intensity,
             }
             this.el.setAttribute('light', light)
+            this.el.setAttribute('position', { x: 5, y: 10, z: 0 })
+
 
         });
     },
