@@ -22,8 +22,8 @@
 
     </style>
 
-    <a-scene  loading-screen="dotsColor: white; backgroundColor: black"vr-mode-ui="enabled: false" arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-        renderer="logarithmicDepthBuffer:true">
+    <a-scene loading-screen="dotsColor: white; backgroundColor: black" vr-mode-ui="enabled: false"
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;' renderer="logarithmicDepthBuffer:true">
 
         <a-assets>
             <a-asset-item id="optimerBoldFont" src="CipherB_Regular.json"></a-asset-item>
@@ -125,28 +125,29 @@
 
 
         <!-- g !-->
-        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: G; font: #optimerBoldFont;"
-            position="-0.9 0.25 -3"></a-entity>
-        <a-entity group form id="objects" scale='1.5 1.5 1.5' text-geometry="value: g; font: #optimerBoldFont;"
-            position="-0.9 0.25 -3" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
+        <a-entity rotation="0 -25 0" group contreform id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: G; font: #optimerBoldFont;" position="-0.9 0.25 -3"></a-entity>
+        <a-entity rotation="0 -25 0" group form id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: g; font: #optimerBoldFont;" position="-0.9 0.25 -3" class="clickable" gesture-handler
+            gesture-handler="minScale: 0.25; maxScale: 10"
             animation=" property: scale;  dur: 2500; dir: alternate; loop:true; easing: easeOutSine;  to: 1.5 1.5 3;">
         </a-entity>
-        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: h; font: #optimerBoldFont;"
-            position="-0.9 0.25 -3"></a-entity>
+        <a-entity rotation="0 -25 0" group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: h; font: #optimerBoldFont;" position="-0.9 0.25 -3"></a-entity>
 
-        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: k; font: #contreForme;"
-            position="-0.9 -0.16 -3">
+        <a-entity rotation="0 -25 0" group forma id="objects" scale='1.5 1.5 1.5'
+            text-geometry="value: k; font: #contreForme;" position="-0.9 -0.16 -3">
         </a-entity>
 
         <!-- o !-->
-        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: O; font: #optimerBoldFont;"
+        <a-entity rotation="0 25 0" group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: O; font: #optimerBoldFont;"
             position="-0.2 0.15 -3"></a-entity>
-        <a-entity group form id="objects" scale='1.5 1.5 1.5' text-geometry="value: o; font: #optimerBoldFont;"
+        <a-entity rotation="0 25 0" group form id="objects" scale='1.5 1.5 1.5' text-geometry="value: o; font: #optimerBoldFont;"
             position="-0.2 0.15 -3" class="clickable" gesture-handler gesture-handler="minScale: 0.25; maxScale: 10"
             animation=" property: scale;  dur: 3000; dir: alternate; loop:true; easing: easeOutSine;  to: 1.5 1.5 3;">
         </a-entity>
-        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
-            position="-0.2 0.15 -3"></a-entity>
+        <a-entity rotation="0 25 0" group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
+            position="-0.2 -0.15 -3"></a-entity>
         <!-- u !-->
         <a-entity group rotation="0 45 0" contreform id="objects" scale='1.5 1.5 1.5'
             text-geometry="value: U; font: #optimerBoldFont;" position="0.1 0.7 -3"></a-entity>
@@ -281,66 +282,58 @@
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
             rotation="0 -180 0" position="-0.2 0.3 0.5"></a-entity>
-        <!-- cotre-forme !-->
-            <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: f; font: #contreForme;"
-               position="-1 1.15 -3"></a-entity>
+        <!-- contre-forme !-->
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
+            position="-1 1.15 -3"></a-entity>
 
-            <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: z; font: #contreForme;"
-               position="-1.6 1.15 -1"></a-entity>
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
+            position="-1.6 1.15 -1"></a-entity>
 
-            <a-entity group forma id="objects" scale='1.5 0.70 1.5'
-            text-geometry="value: é; font: #contreForme;"
-               position="-2 -0.15 -2"></a-entity>
+        <a-entity group forma id="objects" scale='1.5 0.70 1.5' text-geometry="value: é; font: #contreForme;"
+            position="-2 -0.15 -2"></a-entity>
 
-               <a-entity group form id="objects" scale='1.5 1.5 1.5' text-geometry="value:  é; font: #contreForme;"
-               position="-0.9 0.75 -1">
-           </a-entity>
+        <a-entity group form id="objects" scale='1.5 1.5 1.5' text-geometry="value:  é; font: #contreForme;"
+            position="-0.9 0.75 -1">
+        </a-entity>
 
 
-            <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: z; font: #contreForme;"
-               position="-0.25 -0.2 -1"></a-entity>
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
+            position="-0.25 -0.2 -1"></a-entity>
 
-            <a-entity group forma id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: f; font: #contreForme;"
-               position="-2 -0.2 -1"></a-entity>
-            <a-entity group forma id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: j; font: #contreForme;"
-               position="0 1.2 -1"></a-entity>
-            <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: q; font: #contreForme;"
-               position="1.2 1.3 0"></a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
+            position="-2 -0.2 -1"></a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: j; font: #contreForme;"
+            position="0 1.2 -1"></a-entity>
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: q; font: #contreForme;"
+            position="1.2 1.3 0"></a-entity>
 
-      <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
             rotation="0 -180 0" position="-0.2 0.3 0.5"></a-entity>
 
-            <a-entity group contreform id="objects" scale='1.5 1.5 1.5'
-            text-geometry="value: f; font: #contreForme;"
-               position="1.2 1 -0.9"      rotation="0 -80 0"></a-entity>
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
+            position="1.2 1 -0.9" rotation="0 -80 0"></a-entity>
 
-               <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
-               rotation="0 -80 0" position="1 -0.65 -0.6">
-           </a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: z; font: #contreForme;"
+            rotation="0 -80 0" position="1 -0.65 -0.6">
+        </a-entity>
 
-           <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: m; font: #contreForme;"
-           rotation="0 -180 0" position="1.1 0.7 0.6"></a-entity>
+        <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: m; font: #contreForme;"
+            rotation="0 -180 0" position="1.1 0.7 0.6"></a-entity>
 
-           <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
-           rotation="0 -180 0" position="0.4 -0.4 0.56"></a-entity>
+        <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: f; font: #contreForme;"
+            rotation="0 -180 0" position="0.4 -0.4 0.56"></a-entity>
         </a-entity>
         <a-entity group forma id="objects" scale='1.5 1.5 1.5' text-geometry="value: q; font: #contreForme;"
-        rotation="0 -180 0" position="-1.3 0 0.56"></a-entity>
-    </a-entity>
+            rotation="0 -180 0" position="-1.3 0 0.56"></a-entity>
+        </a-entity>
         <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: q; font: #contreForme;"
-        rotation="0 0 0" position="-1 0.2 0.56"></a-entity>
-    </a-entity>
+            rotation="0 0 0" position="-1 0.2 0.56"></a-entity>
+        </a-entity>
 
-    </a-entity>
+        </a-entity>
         <a-entity group contreform id="objects" scale='1.5 1.5 1.5' text-geometry="value: h; font: #contreForme;"
-        rotation="0 -80 0" position="-0.5 0.6 0"></a-entity>
-    </a-entity>
+            rotation="0 -80 0" position="-0.5 0.6 0"></a-entity>
+        </a-entity>
 
         <a-camera position="0 0.4 0">
         </a-camera>
